@@ -31,7 +31,7 @@ def about(request):
     return render(request, 'about.html', context)
 
 def services(request):
-    services = Service.objects.all()
+    services = Service.objects.order_by("-id")
 
     context={
         'service':services
@@ -40,7 +40,7 @@ def services(request):
 
 def gallery(request):
 
-    image = Gallery.objects.all()
+    image = Gallery.objects.order_by("-id")
 
     return render(request, 'gallery.html',{"image":image})
 
