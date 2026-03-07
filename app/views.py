@@ -7,7 +7,7 @@ def home(request):
     banner = Banner.objects.order_by('-id').first()
     about = AboutUs.objects.order_by('-id').first()
     services = Service.objects.order_by('-id')
-    testimonial = Testimonial.objects.all()
+    testimonial = Testimonial.objects.order_by('-id')
 
     context = {
         "banner":banner,
